@@ -1,0 +1,16 @@
+replicaCount: 1
+
+image:
+  repository: acrdevopsdemo01.azurecr.io/karthickapp
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8080
+
+canary:
+  enabled: true
+  tag: v1.1.0      # new version for testing
+  weight: 20   

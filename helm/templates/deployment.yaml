@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}{{- if .Values.canary.enabled }}-canary{{ end }}
+spec:
+  replicas: {{- if .Values.canary.enabled }}
+    {{ div (mul .Values.replicaCount .Values.canary.weight) 100 | ceil }}
+  {{- else }}
+    {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+      {{- if .Values.canary.enabled }}
+      version: canary
+      {{- end }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+        {{- if .Values.canary.enabled }}
+        version: canary
+        {{- end }}
+    spec:
+      # ---- Pod-level security context (run as non-root) ----
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{- if .Values.canary.enabled }}{{ .Values.canary.tag | default .Values.image.tag }}{{ else }}{{ .Values.image.tag }}{{ end }}"
+        imagePullPolicy: IfNotPresent
+
+        # ---- Limit exposed ports ----
+        ports:
+        - containerPort: {{ .Values.service.targetPort }}
+
+        # ---- Container-level security context ----
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+            - ALL
+
+        # ---- Resource requests/limits (adjust as needed) ----
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
