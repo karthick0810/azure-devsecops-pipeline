@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Karthick Devaraj | Enhanced Platform Engineering Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for professional symbols -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        /* Base styles for a dark, professional tech theme */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #030712; /* Extreme dark blue/black */
+            color: #e2e8f0; /* Light text */
+            min-height: 100vh;
+        }
+
+        /* Set a clean, structured main grid for desktop */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+        @media (min-width: 1024px) {
+            .dashboard-grid {
+                grid-template-columns: 300px 1fr; /* Wider sidebar */
+                padding: 2.5rem 1.5rem;
+            }
+            .sidebar {
+                position: sticky;
+                top: 2.5rem;
+                height: calc(100vh - 5rem);
+            }
+        }
+
+        /* Accent-Glow effect for cards (projects) */
+        .card-glow {
+            border: 1px solid #1e293b;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #0f172a; /* Slate 900 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+        }
+        .card-glow:hover {
+            border-color: #38bdf8; /* Electric Blue/Sky */
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15), 0 0 15px rgba(56, 189, 248, 0.6);
+            transform: translateY(-5px);
+        }
+        
+        /* Sidebar container styles */
+        .sidebar-panel {
+            background-color: rgba(15, 23, 42, 0.85); /* Slate 900 semi-transparent */
+            backdrop-filter: blur(10px);
+            border: 1px solid #1e293b;
+        }
+        
+        /* Metric box styles (Impact) */
+        .metric-box {
+            background: linear-gradient(135deg, #0f172a 0%, #030712 100%);
+            border: 2px solid #38bdf850;
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+        }
+        
+        /* Utility styles */
+        .text-accent { color: #38bdf8; }
+        .bg-accent { background-color: #38bdf8; }
+
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-accent': '#38bdf8', /* Sky 400 */
+                        'soft-dark': '#0f172a', /* Slate 900 */
+                        'deep-dark': '#030712', /* Custom background */
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="selection:bg-sky-600 selection:text-white">
+    <div class="container mx-auto max-w-7xl dashboard-grid">
+
+        <!-- Fixed Sidebar (Profile & Navigation) -->
+        <aside class="sidebar p-4 lg:p-0 bg-deep-dark lg:bg-transparent lg:border-r lg:border-gray-800/50">
+            <div class="lg:w-[300px] lg:p-6 lg:rounded-2xl sidebar-panel">
+                
+                <!-- Profile Header -->
+                <div class="mb-8 p-0 border-b border-gray-700/50 pb-4">
+                    <h1 class="text-4xl font-extrabold tracking-tight text-white leading-snug">
+                        Karthick Devaraj
+                    </h1>
+                    <span class="text-xl text-primary-accent font-semibold mt-1 block">
+                        Azure Platform & DevSecOps Engineer
+                    </span>
+                    <span class="text-sm text-gray-500 font-light mt-2 block">
+                        4+ Years of Cloud-Native Expertise
+                    </span>
+                </div>
+
+                <!-- Contact & Social Links -->
+                <div class="flex flex-col gap-4 text-sm mb-10 p-0">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gray-400 border-b border-gray-700 pb-1">Contact & Links</h2>
+                    
+                    <!-- Phone Number -->
+                    <a href="tel:+918760877462" class="flex items-center text-gray-300 hover:text-accent transition-colors">
+                        <i data-lucide="phone" class="w-4 h-4 mr-3 text-sky-500"></i> +91 87608 77462
+                    </a>
+                    
+                    <!-- Email -->
+                    <a href="mailto:karthickdevopsdk@gmail.com" class="flex items-center text-gray-300 hover:text-accent transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4 mr-3 text-sky-500"></i> karthickdevopsdk@gmail.com
+                    </a>
+                    
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/karthick-d-7560681a2/" target="_blank" class="flex items-center text-gray-300 hover:text-accent transition-colors">
+                        <i data-lucide="linkedin" class="w-4 h-4 mr-3 text-sky-500"></i> LinkedIn Profile
+                    </a>
+                    
+                    <!-- GitHub -->
+                    <a href="https://github.com/karthick0810/azure-devsecops-pipeline" target="_blank" class="flex items-center text-gray-300 hover:text-accent transition-colors">
+                        <i data-lucide="github" class="w-4 h-4 mr-3 text-sky-500"></i> GitHub Codebase
+                    </a>
+                </div>
+                
+                <!-- Main Navigation -->
+                <nav class="p-0">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gray-400 border-b border-gray-700 pb-1 mb-4">Sections</h2>
+                    <ul class="flex flex-col gap-3 text-base font-medium">
+                        <li><a href="#summary" class="flex items-center text-gray-300 hover:text-accent transition-colors p-1 rounded-md"><i data-lucide="briefcase" class="w-4 h-4 mr-3 text-sky-400"></i> Executive Summary</a></li>
+                        <li><a href="#skills" class="flex items-center text-gray-300 hover:text-accent transition-colors p-1 rounded-md"><i data-lucide="zap" class="w-4 h-4 mr-3 text-sky-400"></i> Core Technical Stack</a></li>
+                        <li><a href="#projects" class="flex items-center text-gray-300 hover:text-accent transition-colors p-1 rounded-md"><i data-lucide="folder-code" class="w-4 h-4 mr-3 text-sky-400"></i> Project Artifacts</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="lg:col-start-2 p-4 lg:p-0">
+
+            <!-- Hero/Executive Summary -->
+            <section id="summary" class="mb-12">
+                <div class="mb-8 border-l-4 border-primary-accent pl-4 bg-soft-dark/50 p-6 rounded-xl shadow-lg">
+                    <p class="text-gray-300 text-lg max-w-4xl leading-relaxed font-light">
+                        DevOps Engineer with <span class="font-bold text-accent">4+ years of experience</span> designing, automating, and operating highly reliable multi-cloud platforms across <strong>Azure</strong>, <strong>AWS</strong>, and hybrid/on-prem infrastructures. I specialize in building <strong>end-to-end Platform Engineering</strong> solutions, implementing secure and fully automated CI/CD pipelines, and integrating <strong>DevSecOps</strong> practices using Trivy, SonarQube, and policy-driven security gates. I’ve provisioned and managed <strong>15+ AKS clusters</strong> using <strong>Terraform</strong>, <strong>Helm</strong>, and <strong>Liquibase-driven zero-downtime release strategies</strong> ensuring consistent, production-grade deployments across multiple environments.
+                    </p>
+                </div>
+
+                <!-- Key Impact Metrics -->
+                <div class="metric-box rounded-2xl p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+                    
+                    <div class="flex flex-col items-start justify-center text-center md:text-left">
+                        <div class="text-5xl font-extrabold text-accent">15+</div>
+                        <div class="text-sm font-medium uppercase tracking-wider text-gray-400 mt-1">AKS Clusters Managed</div>
+                    </div>
+
+                    <div class="flex flex-col items-start justify-center text-center md:text-left">
+                        <div class="text-5xl font-extrabold text-accent">40%</div>
+                        <div class="text-sm font-medium uppercase tracking-wider text-gray-400 mt-1">Manual Effort Reduction</div>
+                    </div>
+
+                    <div class="flex flex-col items-start justify-center text-center md:text-left">
+                        <div class="text-5xl font-extrabold text-accent">50+</div>
+                        <div class="text-sm font-medium uppercase tracking-wider text-gray-400 mt-1">Developers Enabled</div>
+                    </div>
+
+                    <div class="flex flex-col items-start justify-center text-center md:text-left">
+                        <div class="text-5xl font-extrabold text-accent">0</div>
+                        <div class="text-sm font-medium uppercase tracking-wider text-gray-400 mt-1">Downtime Releases</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Technical Stack (Enhanced Categorized Layout) -->
+            <section id="skills" class="mb-12">
+                <h2 class="text-2xl font-bold mb-6 text-white border-b border-gray-700/50 pb-2 flex items-center"><i data-lucide="cpu" class="w-6 h-6 mr-3 text-accent"></i> Core Technical Stack</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    
+                    <!-- Category 1: Cloud & IaC -->
+                    <div class="p-5 rounded-xl bg-soft-dark/70 border border-sky-700/50 shadow-md">
+                        <div class="flex items-center text-accent mb-2"><i data-lucide="cloud" class="w-5 h-5 mr-2"></i><span class="font-bold">Cloud & IaC</span></div>
+                        <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc marker:text-sky-500">
+                            <li>Azure (Primary)</li>
+                            <li>AWS</li>
+                            <li>Terraform, ARM Templates</li>
+                            <li>Hybrid/On-Premises</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Category 2: Orchestration -->
+                    <div class="p-5 rounded-xl bg-soft-dark/70 border border-sky-700/50 shadow-md">
+                        <div class="flex items-center text-accent mb-2"><i data-lucide="kube" class="w-5 h-5 mr-2"></i><span class="font-bold">Orchestration & Deploy</span></div>
+                        <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc marker:text-sky-500">
+                            <li>Kubernetes (AKS, EKS)</li>
+                            <li>Docker, Containerization</li>
+                            <li>Helm Charting</li>
+                            <li>Liquibase DB Migrations</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 3: CI/CD & Automation -->
+                    <div class="p-5 rounded-xl bg-soft-dark/70 border border-sky-700/50 shadow-md">
+                        <div class="flex items-center text-accent mb-2"><i data-lucide="git-branch" class="w-5 h-5 mr-2"></i><span class="font-bold">CI/CD & Automation</span></div>
+                        <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc marker:text-sky-500">
+                            <li>Azure Pipelines (YAML)</li>
+                            <li>Jenkins & GitLab CI</li>
+                            <li>Ansible Tower</li>
+                            <li>Bash/PowerShell</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Category 4: DevSecOps & Ops -->
+                    <div class="p-5 rounded-xl bg-soft-dark/70 border border-sky-700/50 shadow-md">
+                        <div class="flex items-center text-accent mb-2"><i data-lucide="shield-check" class="w-5 h-5 mr-2"></i><span class="font-bold">DevSecOps & Observability</span></div>
+                        <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc marker:text-sky-500">
+                            <li>Trivy & SonarQube</li>
+                            <li>Azure Key Vault</li>
+                            <li>Prometheus & Grafana</li>
+                            <li>Azure Monitor, Loki</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Artifacts -->
+            <section id="projects" class="mb-12">
+                <h2 class="text-2xl font-bold mb-6 text-white border-b border-gray-700/50 pb-2 flex items-center"><i data-lucide="folder-tree" class="w-6 h-6 mr-3 text-accent"></i> Project Artifacts & Evidence</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- Card 1: Azure DevSecOps Pipeline -->
+                    <article class="card-glow rounded-xl p-6 hover:shadow-2xl">
+                        <div class="flex items-center mb-3 text-accent">
+                            <i data-lucide="route" class="w-6 h-6 mr-3"></i>
+                            <h3 class="text-xl font-semibold text-white">CI/CD & Release Automation</h3>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-5 line-clamp-3">
+                            Engineered robust, <strong>multi-stage YAML pipelines</strong> (Azure DevOps) and declarative Jenkins jobs, ensuring streamlined, validated, and reduced release times.
+                        </p>
+                        <div class="card-links flex flex-col gap-3 border-t border-gray-700/50 pt-4">
+                            <a href="Azure%20Devsecops%20Pipeline/Azure-pipeline.yaml" class="flex items-center text-sm font-medium text-sky-300 hover:text-white transition-colors">
+                                <i data-lucide="code" class="w-4 h-4 mr-2"></i> View Azure Pipeline YAML
+                            </a>
+                            <a href="helm/" class="flex items-center text-sm font-medium text-gray-400 hover:text-sky-300 transition-colors">
+                                <i data-lucide="package-search" class="w-4 h-4 mr-2"></i> Linked Helm Directory
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Card 2: Helm / AKS Deployment -->
+                    <article class="card-glow rounded-xl p-6 hover:shadow-2xl">
+                        <div class="flex items-center mb-3 text-accent">
+                            <i data-lucide="container" class="w-6 h-6 mr-3"></i>
+                            <h3 class="text-xl font-semibold text-white">Kubernetes Platform & Deployments</h3>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-5 line-clamp-3">
+                            Standardized <strong>Helm-based deployments</strong> across <strong>AKS/EKS</strong>, integrating <strong>Liquibase</strong> for reliable zero-downtime database schema migration.
+                        </p>
+                        <div class="card-links flex flex-col gap-3 border-t border-gray-700/50 pt-4">
+                            <a href="helm/templates/deployment.yaml" class="flex items-center text-sm font-medium text-sky-300 hover:text-white transition-colors">
+                                <i data-lucide="file-code" class="w-4 h-4 mr-2"></i> Deployment Manifest Sample
+                            </a>
+                            <a href="helm/values.yaml" class="flex items-center text-sm font-medium text-gray-400 hover:text-sky-300 transition-colors">
+                                <i data-lucide="settings" class="w-4 h-4 mr-2"></i> Configuration Values
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Card 3: Terraform Infrastructure -->
+                    <article class="card-glow rounded-xl p-6 hover:shadow-2xl">
+                        <div class="flex items-center mb-3 text-accent">
+                            <i data-lucide="layers-3" class="w-6 h-6 mr-3"></i>
+                            <h3 class="text-xl font-semibold text-white">Infrastructure as Code (IaC)</h3>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-5 line-clamp-3">
+                            Automated Azure infrastructure using <strong>Terraform</strong>, <strong>ARM Templates</strong>, ensuring consistent, versioned, and repeatable resource provisioning.
+                        </p>
+                        <div class="card-links flex flex-col gap-3 border-t border-gray-700/50 pt-4">
+                            <a href="terraform/" class="flex items-center text-sm font-medium text-sky-300 hover:text-white transition-colors">
+                                <i data-lucide="folder-tree" class="w-4 h-4 mr-2"></i> Infra Codebase Directory
+                            </a>
+                            <a href="terraform/main.tf" class="flex items-center text-sm font-medium text-gray-400 hover:text-sky-300 transition-colors">
+                                <i data-lucide="code" class="w-4 h-4 mr-2"></i> main.tf Entrypoint
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Card 4: Security & Observability -->
+                    <article class="card-glow rounded-xl p-6 hover:shadow-2xl">
+                        <div class="flex items-center mb-3 text-accent">
+                            <i data-lucide="target" class="w-6 h-6 mr-3"></i>
+                            <h3 class="text-xl font-semibold text-white">DevSecOps & Observability</h3>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-5 line-clamp-3">
+                            Integrated <strong>Trivy</strong> and <strong>SonarQube</strong> for security gates. The linked scans demonstrate a <strong>zero-vulnerability, zero-misconfiguration</strong> posture, coupled with <strong>Prometheus/Grafana</strong> for full operational insight.
+                        </p>
+                        <div class="card-links flex flex-col gap-3 border-t border-gray-700/50 pt-4">
+                            <a href="Images/{951C0EE3-F7E5-4291-AEE0-C08DFDDF01C9}.png" target="_blank" class="flex items-center text-sm font-medium text-sky-300 hover:text-white transition-colors">
+                                <i data-lucide="scan" class="w-4 h-4 mr-2"></i> Trivy Config Scan (0 Misconfigurations)
+                            </a>
+                            <a href="Images/{7DA95E8E-8EA2-452E-A8E3-8839D9DDA6BC}.png" target="_blank" class="flex items-center text-sm font-medium text-sky-300 hover:text-white transition-colors">
+                                <i data-lucide="scan-text" class="w-4 h-4 mr-2"></i> Trivy Image Scan (0 Vulnerabilities)
+                            </a>
+                            <a href="#" class="flex items-center text-sm font-medium text-gray-400 hover:text-sky-300 transition-colors">
+                                <i data-lucide="shield-check" class="w-4 h-4 mr-2"></i> Security Gate Logic Example (Placeholder)
+                            </a>
+                            <a href="#" class="flex items-center text-sm font-medium text-gray-400 hover:text-sky-300 transition-colors">
+                                <i data-lucide="bar-chart-3" class="w-4 h-4 mr-2"></i> Monitoring Setup Details (Placeholder)
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <footer class="mt-12 pt-6 border-t border-gray-800 text-center">
+                <p class="text-xs text-gray-500">
+                    Engineered by Karthick Devaraj | Built with Tailwind CSS and Lucide Icons.
+                </p>
+            </footer>
+
+        </main>
+    </div>
+    <!-- Initialize Lucide Icons after content loads -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
