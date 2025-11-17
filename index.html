@@ -292,30 +292,31 @@
                         </div>
                     </article>
 
-                    <!-- Card 4: Security & Observability - ENHANCED -->
+                    <!-- Card 4: Security & Observability - ENHANCED with DevSecOps Terms -->
                     <article class="card-glow rounded-xl p-6 hover:shadow-2xl">
                         <div class="flex items-center mb-3 text-accent">
                             <i data-lucide="target" class="w-6 h-6 mr-3"></i>
                             <h3 class="text-xl font-semibold text-white">DevSecOps & Observability</h3>
                         </div>
                         <p class="text-sm text-gray-400 mb-5 line-clamp-3">
-                            Integrated <strong>Trivy</strong> and <strong>SonarQube</strong> for security gates and code quality checks. Leveraged <strong>Prometheus/Grafana/Azure Monitor</strong> to deliver full operational observability, demonstrating a zero-vulnerability posture.
+                            Integrated <strong>SAST (SonarQube)</strong> and <strong>Vulnerability/SCA (Trivy)</strong> into the pipeline for security gates. Leveraged <strong>Prometheus/Grafana/Azure Monitor</strong> to deliver full operational observability, demonstrating a zero-vulnerability posture.
                         </p>
                         <div class="card-links flex flex-col gap-3 border-t border-gray-700/50 pt-4">
-                            <!-- New SonarQube link -->
+                            <!-- SAST/Code Quality -->
                             <a href="Images/{141E033B-01BA-4295-BA98-0B8764D25BA3}.png" target="_blank" class="flex items-center text-sm font-medium text-sky-300 hover:text-white transition-colors">
-                                <i data-lucide="check-circle" class="w-4 h-4 mr-2"></i> SonarQube Quality Gate (PASS)
+                                <i data-lucide="check-circle" class="w-4 h-4 mr-2"></i> SAST & Code Quality Gate (PASS)
                             </a>
-                            <!-- New Grafana link -->
-                            <a href="Images/{21B2C81D-7AFD-4FAC-8835-3614BB1ABA14}.png" target="_blank" class="flex items-center text-sm font-medium text-sky-300 hover:text-white transition-colors">
-                                <i data-lucide="line-chart" class="w-4 h-4 mr-2"></i> Grafana Observability Dashboard
+                            <!-- Container Vulnerability/SCA -->
+                            <a href="Images/{7DA95E8E-8EA2-452E-A8E3-8839D9DDA6BC}.png" target="_blank" class="flex items-center text-sm font-medium text-sky-300 hover:text-white transition-colors">
+                                <i data-lucide="scan-text" class="w-4 h-4 mr-2"></i> Container Vulnerability & SCA
                             </a>
-                            <!-- Existing Trivy links -->
+                            <!-- IaC Misconfiguration -->
                             <a href="Images/{951C0EE3-F7E5-4291-AEE0-C08DFDDF01C9}.png" target="_blank" class="flex items-center text-sm font-medium text-gray-400 hover:text-sky-300 transition-colors">
-                                <i data-lucide="scan" class="w-4 h-4 mr-2"></i> Trivy Config Scan (0 Misconfigurations)
+                                <i data-lucide="scan" class="w-4 h-4 mr-2"></i> IaC Misconfiguration Scan
                             </a>
-                            <a href="Images/{7DA95E8E-8EA2-452E-A8E3-8839D9DDA6BC}.png" target="_blank" class="flex items-center text-sm font-medium text-gray-400 hover:text-sky-300 transition-colors">
-                                <i data-lucide="scan-text" class="w-4 h-4 mr-2"></i> Trivy Image Scan (0 Vulnerabilities)
+                            <!-- Monitoring -->
+                            <a href="Images/{21B2C81D-7AFD-4FAC-8835-3614BB1ABA14}.png" target="_blank" class="flex items-center text-sm font-medium text-gray-400 hover:text-sky-300 transition-colors">
+                                <i data-lucide="line-chart" class="w-4 h-4 mr-2"></i> Prometheus/Grafana Dashboard
                             </a>
                         </div>
                     </article>
